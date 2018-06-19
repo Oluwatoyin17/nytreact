@@ -1,10 +1,9 @@
 import React from "react";
 
-const Home = props => (
-<div className= "home">
-    <div className="container"/>
+const Search = props => 
+  <div className="container">
 
-    {/*  Jumbotron for Title  */}
+     /*  Jumbotron for Title  */
     <div className="jumbotron" style="background-color: #20315A ; color: white;">
       <h1 className="text-center">
         <strong>
@@ -12,7 +11,7 @@ const Home = props => (
       </h1>
     </div>
 
-    {/* Row for Searching New York Times   */}
+    /* Row for Searching New York Times   */
     <div className="row">
       <div className="col-sm-12"/>
         <br/>
@@ -31,20 +30,20 @@ const Home = props => (
 
               {/* Here we create the text box for capturing the search term */}
               <div className="form-group">
-                <label for="search">Search Term:</label>
-                <input type="text" className="form-control" id="search-term"/>
+                <label for="search">Topic:</label>
+                <input onChange={props.handleInputChange} type="text" className="form-control" id="search-term"/>
               </div>
 
                {/* Here we capture the Start Year Parameter */}
               <div className="form-group">
                 <label for="start-year">Start Year (Optional):</label>
-                <input type="text" className="form-control" id="start-year"/>
+                <input onChange={props.handleStartInputChange} type="text" className="form-control" id="start-year"/>
               </div>
 
                {/* Here we capture the End Year Parameter  */}
               <div className="form-group">
                 <label for="end-year">End Year (Optional):</label>
-                <input type="text" className="form-control" id="end-year"/>
+                <input onChange={props.handleEndInputChange} type="text" className="form-control" id="end-year"/>
               </div>
 
                {/* Here we have our final submit button  */}
@@ -59,7 +58,10 @@ const Home = props => (
           </div>
         </div>
       </div>
-    </div>
+    
+
+    <br/><br/>
+
 
      /* This row will handle all of the retrieved articles  */
     <div className="row">
@@ -73,16 +75,16 @@ const Home = props => (
           <div className="panel-heading">
             <h3 className="panel-title">
               <strong>
-                <i className="fa fa-table"></i> Top Articles</strong>
+                <i className="fa fa-table"></i> Results</strong>
             </h3>
           </div>
 
            {/* This main panel will hold each of the resulting articles  */}
-          <div className="panel-body" id="well-section">
+          <div className="panel-body" id="well-section"> {props.renderArticles()}
           </div>
         </div>
       </div>
-    </div>
+  </div>
 </div>
-);
+
 export default SearchForm;
