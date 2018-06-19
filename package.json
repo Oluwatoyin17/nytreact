@@ -1,0 +1,8 @@
+{
+  "name": "nytreact",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Oluwatoyin17/nytreact.git",
+  "author": "Oluwatoyin Oshinkoya <dotunoshinkoya@yahoo.com>",
+  "license": "MIT"
+}
